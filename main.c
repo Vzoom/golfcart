@@ -208,10 +208,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 int Geschwindigkeit(uint16_t dauer_msec)
 {
   int16_t geschwindigkeit_kmh;
-  {
-    /* Funktionswert */
-    return geschwindigkeit_kmh;
-  }
+const int radius_cm;
+const int Pi_tausendstel;
+int dauer_min;
+dauer_min=dauer_msek/60000;
+geschwindigkeit_kmh = 1/dauer_min*radius_cm*2*Pi_tausendstel/100/1000*60;
+return geschwindigkeit_kmh;
 }
 
 /**
